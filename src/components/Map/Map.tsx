@@ -34,8 +34,9 @@ export class Map extends React.Component<MapProps> {
             center: [55.76, 37.64],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
-            zoom: 7,
-        })
+            zoom: 7
+        });
+        this.map.behaviors.disable('scrollZoom');
     }
 
     render() {
