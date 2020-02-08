@@ -1,21 +1,24 @@
 import React from "react"
 import {Map} from "./components/Map/Map"
 import "./index.css"
+import {AppHeader} from "./fragments/AppHeader"
 import styled from "styled-components"
+import {BottomCardBlock} from "./fragments/BottomCardBlock"
 
 const App = () => {
     return (
         <AppWrapper>
-            <Map />
+            <AppHeader />
+            <Map width="100%" height="327px" />
+            <BottomCardBlock />
         </AppWrapper>
     )
 }
 
 const AppWrapper = styled.div`
-    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    flex: 1;
 `
 
 export default App

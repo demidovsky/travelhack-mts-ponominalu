@@ -2,10 +2,12 @@ import React from "react"
 import ymaps from "ymaps"
 import styled from "styled-components"
 
-export class Map extends React.Component {
+type MapProps = {width: string; height: string}
+
+export class Map extends React.Component<MapProps> {
     private map: any
 
-    constructor(props: {}) {
+    constructor(props: MapProps) {
         super(props)
 
         this.loadYmaps()
@@ -37,11 +39,12 @@ export class Map extends React.Component {
     }
 
     render() {
-        return <MapWrapper id="map"></MapWrapper>
+        const {width, height} = this.props
+        return <MapWrapper width={width} height={height} id="map"></MapWrapper>
     }
 }
 
-const MapWrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+const MapWrapper = styled.div<MapProps>`
+    width: ${({width}) => width};
+    height: ${({height}) => height};
 `
