@@ -44,12 +44,13 @@ export class Map extends React.Component<MapProps> {
       const placeMark = new this.map.Placemark(
         event.venue.google_address.split(","),
         {
-          iconCaption: event.title,
+          iconCaption: event.title
           // balloonContent
         }
       );
 
       this.mapInstance.geoObjects.add(placeMark);
+      placeMark.events.add("click", () => alert("mark clicked"));
     });
   };
 
