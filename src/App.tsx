@@ -1,15 +1,24 @@
 import React from "react"
-// import {Map} from "./components/Map/Map"
+import {Map} from "./components/Map/Map"
 import "./index.css"
-import Container from "@material-ui/core/Container"
-import {Header} from "./components/Header/Header"
+import {AppHeader} from "./fragments/AppHeader"
+import styled from "styled-components"
+import {BottomCardBlock} from "./fragments/BottomCardBlock"
 
 const App = () => {
     return (
-        <Container>
-            <Header />
-        </Container>
+        <AppWrapper>
+            <AppHeader />
+            <Map width="100%" height="327px" />
+            <BottomCardBlock />
+        </AppWrapper>
     )
 }
+
+const AppWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+`
 
 export default App
