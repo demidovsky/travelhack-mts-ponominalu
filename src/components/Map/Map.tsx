@@ -1,14 +1,16 @@
+/* eslint-disable */
 import React from "react";
 import ymaps from "ymaps";
 import styled from "styled-components";
-import { inject } from "../../utils/inject";
+import { xinject } from "../../utils/inject";
 import { EventStore } from "../../stores/EventStore";
-import { getDateFromIso } from "../../utils/util";
+import addDays from "date-fns/addDays";
+import format from "date-fns/format";
 
 type MapProps = { width: string; height: string };
 
 export class Map extends React.Component<MapProps> {
-  @inject private eventStore: EventStore;
+  eventStore = xinject(EventStore);
 
   private map: any;
 
@@ -24,11 +26,9 @@ export class Map extends React.Component<MapProps> {
         "https://api-maps.yandex.ru/2.1/?apikey=0955f635-90e7-43c4-a522-d06b8a9edc99&lang=ru_RU"
       );
 
-      this.initMap(map.Map);
-
       this.eventStore.load({
-        start_date: getDateFromIso(new Date()),
-        end_date: getDateFromIso(new Date())
+        start_date: format(new Date(), "yyyy-MM-dd"),
+        end_date: format(addDays(new Date(), 7), "yyyy-MM-dd")
       });
     } catch (err) {
       console.error(err.message);
@@ -46,6 +46,7 @@ export class Map extends React.Component<MapProps> {
       // от 0 (весь мир) до 19.
       zoom: 7
     });
+    this.map.behaviors.disable("scrollZoom");
   };
 
   render() {

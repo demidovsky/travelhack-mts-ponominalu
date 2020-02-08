@@ -13,6 +13,7 @@
     "@types/styled-components": "^4.4.2",
     "axios": "^0.19.2",
     "backendless": "^5.7.1",
+    "date-fns": "^2.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",

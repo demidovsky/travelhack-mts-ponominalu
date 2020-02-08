@@ -2,7 +2,7 @@ import styled from "styled-components"
 import {textOverflow} from "../../utils/util"
 
 export const Card = styled.div`
-    width: 300px;
+    width: 100%;
     height: 367px;
     flex: 1;
     display: flex;

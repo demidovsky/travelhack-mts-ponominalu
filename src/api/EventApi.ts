@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios, { AxiosInstance } from "axios";
 import config from "../config/config.json";
 
@@ -10,6 +11,8 @@ export class EventApi {
   });
 
   getAll = (params: EventGetAll) => {
-    return axios.get("/subevents/actual/get", { params });
+    return this.api.get("/subevents/actual/get", {
+      params: { ...params, ...{ session: 123 } }
+    });
   };
 }

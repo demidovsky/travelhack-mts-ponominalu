@@ -3,6 +3,11 @@ import React, { Fragment, Component } from "react";
 
 import Backendless from 'backendless';
 
+import {Map} from "./components/Map/Map"
+import {BottomCardBlock} from "./fragments/BottomCardBlock"
+import {Header, HeaderTitle, HeaderTitleColored, HeaderSub, SocialBlock} from "./components/Header/Header"
+
+
 
 Backendless.initApp('5491463D-49B2-248C-FF2E-E755E025FF00', '9BD34E37-604C-44CD-80E2-F1F76DC6D66F');
 
@@ -81,7 +86,7 @@ class Layout extends Component {
   </nav>
 
   <div className="view full-page-intro" style={{
-    backgroundImage: "url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg')",
+    backgroundImage: "url('/logo.jpg')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"}}>
 
@@ -93,17 +98,18 @@ class Layout extends Component {
 
           <div className="col-md-6 mb-4 white-text text-center text-md-left">
 
-            <h1 className="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+            <h1 className="display-4 font-weight-bold">
+              <span style={{ color: 'red' }}>#hangout</span>likealocal
+            </h1>
 
             <hr className="hr-light"/>
 
-            <p>
-              <strong>Best & free guide of responsive web design</strong>
-            </p>
+            <h2>
+              <strong>Overcome the language barrier through music</strong>
+            </h2>
 
             <p className="mb-4 d-none d-md-block">
-              <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                available. Create your own, stunning website.</strong>
+              <strong>Pick experiences, choose concerts near you, find locals to attend events together.</strong>
             </p>
 
            {/* <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" className="btn btn-indigo btn-lg">Start free tutorial
@@ -121,6 +127,11 @@ class Layout extends Component {
                 <button className="btn btn-indigo btn-lg" onClick={this.loginFB}>
                   <i className="fab fa-facebook-f"></i>&nbsp;
                   Login with Facebook
+                </button>
+
+                <button className="btn btn-success btn-lg" onClick={this.loginFB}>
+                  <i className="fab fa-spotify"></i>&nbsp;
+                  Login with Spotify
                 </button>
 
                 {/*<form name="">
@@ -172,6 +183,14 @@ class Layout extends Component {
   </div>
 
   <main>
+
+    
+  <Map width="100%" height="327px" />
+
+  <div className="container">
+  <BottomCardBlock />
+  </div>
+
     <div className="container">
 
       <section className="mt-5 wow fadeIn">

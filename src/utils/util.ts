@@ -5,7 +5,3 @@ export const textOverflow = css`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
-export const getDateFromIso = (date: Date) => {
-  return date.toISOString().split("T")[0];
-};
