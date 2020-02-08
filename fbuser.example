@@ -1,0 +1,16 @@
+User {___class: "Users", lastLogin: 1581174912000, userStatus: "ENABLED", socialAccount: "FACEBOOK", created: 1581174911717, …}
+___class: "Users"
+lastLogin: 1581174912000
+userStatus: "ENABLED"
+socialAccount: "FACEBOOK"
+created: 1581174911717
+name: "Дмитрий Демидовский"
+email: "2626786360740578"
+id: "2626786360740578"
+blUserLocale: "en"
+updated: null
+objectId: "69D67779-0D76-758E-FF71-F22127DDAC00"
+ownerId: "69D67779-0D76-758E-FF71-F22127DDAC00"
+user-token: "4B38E7BD-7052-1C77-FF12-2FAD022DFC00"
+user-registered: true
+__proto__: Object
