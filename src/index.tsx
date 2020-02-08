@@ -4,12 +4,9 @@ import "./index.css"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
-import {theme as primer} from "@primer/components"
 import {ThemeProvider} from "styled-components"
 
-const theme = {
-    ...primer,
-}
+const theme = {}
 
 console.log("currentTheme:", theme)
 

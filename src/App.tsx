@@ -1,21 +1,15 @@
 import React from "react"
-import {Map} from "./components/Map/Map"
+// import {Map} from "./components/Map/Map"
 import "./index.css"
-import styled from "styled-components"
+import Container from "@material-ui/core/Container"
+import {Header} from "./components/Header/Header"
 
 const App = () => {
     return (
-        <AppWrapper>
-            <Map />
-        </AppWrapper>
+        <Container>
+            <Header />
+        </Container>
     )
 }
-
-const AppWrapper = styled.div`
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-`
 
 export default App
