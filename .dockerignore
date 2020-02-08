@@ -1,0 +1,5 @@
+.git
+.DS_Store
+#node_modules
+shell-scripts
+.env
