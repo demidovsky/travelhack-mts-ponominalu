@@ -4,7 +4,7 @@ import ymaps from "ymaps";
 import styled from "styled-components";
 import { xinject } from "../../utils/inject";
 import { EventStore } from "../../stores/EventStore";
-import addDays from "date-fns/addDays";
+import addMonths from "date-fns/addMonths";
 import format from "date-fns/format";
 
 type MapProps = { width: string; height: string };
@@ -13,30 +13,48 @@ export class Map extends React.Component<MapProps> {
   eventStore = xinject(EventStore);
 
   private map: any;
+  private mapInstance: any;
 
   constructor(props: MapProps) {
     super(props);
-
-    this.loadYmaps();
+    this.init();
   }
 
-  private loadYmaps = async () => {
+  private init = async () => {
     try {
-      const map = await ymaps.load(
+      this.map = await ymaps.load(
         "https://api-maps.yandex.ru/2.1/?apikey=0955f635-90e7-43c4-a522-d06b8a9edc99&lang=ru_RU"
       );
 
-      this.eventStore.load({
+      this.initMap();
+
+      const events = await this.eventStore.load({
         start_date: format(new Date(), "yyyy-MM-dd"),
-        end_date: format(addDays(new Date(), 7), "yyyy-MM-dd")
+        end_date: format(addMonths(new Date(), 1), "yyyy-MM-dd")
       });
+
+      this.drawEvents(events);
     } catch (err) {
-      console.error(err.message);
+      console.error(err);
     }
   };
 
-  private initMap = (Constructor: any) => {
-    this.map = new Constructor("map", {
+  private drawEvents = (events: any[]) => {
+    events.forEach(event => {
+      const placeMark = new this.map.Placemark(
+        event.venue.google_address.split(","),
+        {
+          iconCaption: event.title,
+          // balloonContent
+        }
+      );
+
+      this.mapInstance.geoObjects.add(placeMark);
+    });
+  };
+
+  private initMap = () => {
+    this.mapInstance = new this.map.Map("map", {
       // Координаты центра карты.
       // Порядок по умолчанию: «широта, долгота».
       // Чтобы не определять координаты центра карты вручную,
@@ -46,7 +64,7 @@ export class Map extends React.Component<MapProps> {
       // от 0 (весь мир) до 19.
       zoom: 7
     });
-    this.map.behaviors.disable("scrollZoom");
+    this.mapInstance.behaviors.disable("scrollZoom");
   };
 
   render() {

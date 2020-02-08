@@ -5,7 +5,13 @@ export class EventStore {
 
   data: any[] = [];
 
-  load = (params: EventGetAll) => {
-    return this.api.getAll(params);
+  load = async (params: EventGetAll) => {
+    try {
+      const res = await this.api.getAll(params);
+      this.data = res.data.message
+      return this.data
+    } catch (err) {
+      throw err;
+    }
   };
 }
