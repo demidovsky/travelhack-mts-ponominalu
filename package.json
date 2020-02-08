@@ -11,11 +11,12 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^4.4.2",
-    "backendless": "^5.7.1",
     "axios": "^0.19.2",
+    "backendless": "^5.7.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",
+    "reflect-metadata": "^0.1.13",
     "styled-components": "^5.0.1",
     "typescript": "~3.7.2",
     "ymaps": "^0.2.1"
