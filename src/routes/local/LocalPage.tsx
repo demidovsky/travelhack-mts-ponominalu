@@ -19,18 +19,45 @@ export class LocalPage extends React.Component<LocalPageProps> {
 
   }
 
+  loginFB = () => {
+
+    const stayLoggedIn = true;
+    Backendless.UserService.loginWithFacebookSdk(
+      { email: "email" },
+      // stayLoggedIn,
+      // { scope: 'user_likes' }
+      /*options*/
+    )
+      .then(function(result) {
+        console.log(result);
+        // if (window)
+        // window.FB.api(
+        //     "/2626786360740578/likes",
+        //     function (response) {
+        //       console.log(response);
+        //       if (response && !response.error) {
+        //         /* handle the result */
+        //       }
+        //     }
+        // );
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  };
+
   checkLoginState = () => {
     FB.getLoginStatus(function(response) {
       console.log(response);
     });
   }
 
-  loginFB = () => {
+/*  loginFB = () => {
     window.FB.getLoginStatus(function(response) {
       console.log(response);
       // statusChangeCallback(response);
     });
-  };
+  };*/
 
   render() {
     return (

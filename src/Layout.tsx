@@ -40,16 +40,16 @@ class Layout extends Component<LayoutProps> {
     )
       .then(function(result) {
         console.log(result);
-        if (window)
-        window.FB.api(
-            "/2626786360740578/likes",
-            function (response) {
-              console.log(response);
-              if (response && !response.error) {
-                /* handle the result */
-              }
-            }
-        );
+        // if (window)
+        // window.FB.api(
+        //     "/2626786360740578/likes",
+        //     function (response) {
+        //       console.log(response);
+        //       if (response && !response.error) {
+        //         /* handle the result */
+        //       }
+        //     }
+        // );
       })
       .catch(function(error) {
         console.error(error);
