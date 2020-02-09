@@ -19,3 +19,24 @@ code {
 .full-page-intro {
   min-height: 100vh;
 }
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.looking-for {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: -10px;
+}
+
+.badge-pill {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-body-cascade {
+  padding-bottom: 0.5rem;
+}

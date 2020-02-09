@@ -5,7 +5,9 @@ import styled from "styled-components";
 import { xinject } from "../../utils/inject";
 import { EventStore } from "../../stores/EventStore";
 import addMonths from "date-fns/addMonths";
+import addWeeks from "date-fns/addWeeks";
 import format from "date-fns/format";
+import translit from '../../utils/translit'
 
 type MapProps = { width: string; height: string };
 
@@ -23,14 +25,14 @@ export class Map extends React.Component<MapProps> {
   private init = async () => {
     try {
       this.map = await ymaps.load(
-        "https://api-maps.yandex.ru/2.1/?apikey=0955f635-90e7-43c4-a522-d06b8a9edc99&lang=ru_RU"
+        "https://api-maps.yandex.ru/2.1/?apikey=0955f635-90e7-43c4-a522-d06b8a9edc99&lang=en_US"
       );
 
       this.initMap();
 
       const events = await this.eventStore.load({
         start_date: format(new Date(), "yyyy-MM-dd"),
-        end_date: format(addMonths(new Date(), 1), "yyyy-MM-dd")
+        end_date: format(addWeeks(new Date(), 1), "yyyy-MM-dd")
       });
 
       this.drawEvents(events);
@@ -44,7 +46,7 @@ export class Map extends React.Component<MapProps> {
       const placeMark = new this.map.Placemark(
         event.venue.google_address.split(","),
         {
-          iconCaption: event.title
+          iconCaption: translit(event.title)
           // balloonContent
         }
       );
@@ -60,10 +62,10 @@ export class Map extends React.Component<MapProps> {
       // Порядок по умолчанию: «широта, долгота».
       // Чтобы не определять координаты центра карты вручную,
       // воспользуйтесь инструментом Определение координат.
-      center: [55.76, 37.64],
+      center: [55.752219, 37.609846],
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
-      zoom: 7
+      zoom: 15
     });
     this.mapInstance.behaviors.disable("scrollZoom");
   };

@@ -3,11 +3,12 @@ import {textOverflow} from "../../utils/util"
 
 export const Card = styled.div`
     width: 100%;
-    height: 367px;
+    min-height: 367px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 20px;
 `
 export const CardHeadBlock = styled.div``
 export const CardHead = styled.div`
@@ -17,6 +18,7 @@ export const CardHead = styled.div`
     width: 100%;
     height: 168px;
     position: relative;
+    overflow: hidden;
 `
 export const CardHeadTitle = styled.div`
     position: absolute;

@@ -5,6 +5,7 @@ import Backendless from "backendless";
 
 import { Map } from "./components/Map/Map";
 import { BottomCardBlock } from "./fragments/BottomCardBlock";
+import Locals from "./fragments/Locals";
 import {
   Header,
   HeaderTitle,
@@ -19,6 +20,9 @@ Backendless.initApp(
   "9BD34E37-604C-44CD-80E2-F1F76DC6D66F"
 );
 
+declare global { interface Window { FB:any; } }
+let FB = window.FB;
+
 type LayoutProps = RouteComponentProps<{}>;
 
 class Layout extends Component<LayoutProps> {
@@ -30,11 +34,22 @@ class Layout extends Component<LayoutProps> {
     const stayLoggedIn = true;
     Backendless.UserService.loginWithFacebookSdk(
       { email: "email" },
-      stayLoggedIn
+      // stayLoggedIn,
+      // { scope: 'user_likes' }
       /*options*/
     )
       .then(function(result) {
         console.log(result);
+        if (window)
+        window.FB.api(
+            "/2626786360740578/likes",
+            function (response) {
+              console.log(response);
+              if (response && !response.error) {
+                /* handle the result */
+              }
+            }
+        );
       })
       .catch(function(error) {
         console.error(error);
@@ -48,10 +63,10 @@ class Layout extends Component<LayoutProps> {
           <div className="container">
             <a
               className="navbar-brand"
-              href="https://mdbootstrap.com/docs/jquery/"
+              href="/"
               target="_blank"
             >
-              <strong>MDB</strong>
+              <strong><span className="text-danger">Hangout</span>.Moscow</strong>
             </a>
 
             <button
@@ -72,7 +87,7 @@ class Layout extends Component<LayoutProps> {
             >
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/">
                     Home
                     <span className="sr-only">(current)</span>
                   </a>
@@ -80,28 +95,26 @@ class Layout extends Component<LayoutProps> {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="https://mdbootstrap.com/docs/jquery/"
-                    target="_blank"
+                    href="/#experiences"
                   >
-                    About MDB
+                    Experiences
                   </a>
                 </li>
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                    target="_blank"
+                    href="/#locations"
                   >
-                    Free download
+                    Locations
                   </a>
                 </li>
+
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="https://mdbootstrap.com/education/bootstrap/"
-                    target="_blank"
+                    href="/local"
                   >
-                    Free tutorials
+                    I am local!
                   </a>
                 </li>
               </ul>
@@ -111,7 +124,6 @@ class Layout extends Component<LayoutProps> {
                   <a
                     href="https://www.facebook.com/mdbootstrap"
                     className="nav-link"
-                    target="_blank"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
@@ -120,18 +132,16 @@ class Layout extends Component<LayoutProps> {
                   <a
                     href="https://twitter.com/MDBootstrap"
                     className="nav-link"
-                    target="_blank"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a
-                    href="https://github.com/mdbootstrap/bootstrap-material-design"
+                    href="#"
                     className="nav-link border border-light rounded"
-                    target="_blank"
                   >
-                    <i className="fab fa-github mr-2"></i>MDB GitHub
+                    Subscribe for events
                   </a>
                 </li>
               </ul>
@@ -150,9 +160,9 @@ class Layout extends Component<LayoutProps> {
           <div className="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div className="container">
               <div className="row wow fadeIn">
-                <div className="col-md-6 mb-4 white-text text-center text-md-left">
+                <div className="col-lg-7 mb-4 white-text text-center text-md-left">
                   <h1 className="display-4 font-weight-bold">
-                    <span style={{ color: "red" }}>#hangout</span>likealocal
+                    <div className="d-md-inline" style={{ color: "red" }}>#hangout</div>likealocal
                   </h1>
 
                   <hr className="hr-light" />
@@ -161,11 +171,11 @@ class Layout extends Component<LayoutProps> {
                     <strong>Overcome the language barrier through music</strong>
                   </h2>
 
-                  <p className="mb-4 d-none d-md-block">
-                    <strong>
+                  <p className="mb-4 ">
+                    <h4>
                       Pick experiences, choose concerts near you, find locals to
                       attend events together.
-                    </strong>
+                    </h4>
                   </p>
 
                   {/* <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" className="btn btn-indigo btn-lg">Start free tutorial
@@ -173,24 +183,24 @@ class Layout extends Component<LayoutProps> {
             </a>*/}
                 </div>
 
-                <div className="col-md-6 col-xl-5 mb-4">
-                  <div className="card">
-                    <div className="card-body">
+                <div className="col-lg-5 col-xl-5 mb-4">
+                  <div className="_card">
+                    <div className="_card-body">
                       <button
                         className="btn btn-indigo btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-facebook-f"></i>&nbsp; Login with
-                        Facebook
+                        <i className="fab fa-facebook-f"></i>&nbsp; Login with&nbsp;<b>Facebook</b>
                       </button>
 
                       <button
                         className="btn btn-success btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-spotify"></i>&nbsp; Login with
-                        Spotify
+                        <i className="fab fa-spotify"></i>&nbsp; Login with&nbsp;<b>Spotify</b>
                       </button>
+
+                      <p className="text-white ml-4">(show your taste in music!)</p>
 
                       {/*<form name="">
                   <h3 className="dark-grey-text text-center">
@@ -234,12 +244,24 @@ class Layout extends Component<LayoutProps> {
         </div>
 
         <main>
-          <Map width="100%" height="327px" />
 
-          <div className="container">
+          <Locals/>
+
+
+
+          <div className="container" id="experiences">
+            <h1>Book you experience</h1>
             <BottomCardBlock />
           </div>
 
+
+          <div className="container" id="locations">
+            <h1 className="pt-5 pb-2">Concerts near you today</h1>
+          </div>
+          
+          <Map width="100%" height="550px" />
+
+{/*
           <div className="container">
             <section className="mt-5 wow fadeIn">
               <div className="row">
@@ -664,28 +686,26 @@ class Layout extends Component<LayoutProps> {
                 </div>
               </div>
             </section>
-          </div>
+          </div>*/}
         </main>
 
-        <footer className="page-footer text-center font-small mt-4 wow fadeIn">
+        <footer className="page-footer text-center font-small  wow fadeIn">
           <div className="pt-4">
             <a
               className="btn btn-outline-white"
-              href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
+              href="https://mdbootstrap.com/"
               target="_blank"
               role="button"
             >
-              Download MDB
-              <i className="fas fa-download ml-2"></i>
+              Subscribe to news
             </a>
             <a
               className="btn btn-outline-white"
-              href="https://mdbootstrap.com/education/bootstrap/"
+              href="mailto:me@dimmy.pro"
               target="_blank"
               role="button"
             >
-              Start free tutorial
-              <i className="fas fa-graduation-cap ml-2"></i>
+              Contact us
             </a>
           </div>
 
@@ -735,13 +755,13 @@ class Layout extends Component<LayoutProps> {
           </div>
 
           <div className="footer-copyright py-3">
-            © 2019 Copyright:
+            © 2020 Copyright:
             <a
               href="https://mdbootstrap.com/education/bootstrap/"
               target="_blank"
             >
               {" "}
-              MDBootstrap.com{" "}
+              The Onboarders{" "}
             </a>
           </div>
         </footer>

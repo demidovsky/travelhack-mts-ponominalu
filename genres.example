@@ -1,0 +1,1058 @@
+{
+  "message": [
+    {
+      "id": 1,
+      "title": "Рок",
+      "alias": "rock",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 27,
+          "title": "alternative",
+          "alias": "alternative"
+        },
+        {
+          "id": 151,
+          "title": "alternative rock",
+          "alias": "alternative-rock"
+        },
+        {
+          "id": 430,
+          "title": "art rock",
+          "alias": "art-rock"
+        },
+        {
+          "id": 63,
+          "title": "electronic rock",
+          "alias": "electronic-rock"
+        },
+        {
+          "id": 540,
+          "title": "garage rock",
+          "alias": "garage-rock"
+        },
+        {
+          "id": 1403,
+          "title": "glam rock",
+          "alias": "glam-rock"
+        },
+        {
+          "id": 31,
+          "title": "grunge",
+          "alias": "grunge"
+        },
+        {
+          "id": 11,
+          "title": "indie rock",
+          "alias": "indie-rock"
+        },
+        {
+          "id": 35,
+          "title": "pop rock",
+          "alias": "pop-rock"
+        },
+        {
+          "id": 242,
+          "title": "rock",
+          "alias": "rock "
+        },
+        {
+          "id": 22,
+          "title": "rock and roll",
+          "alias": "rock-and-roll"
+        },
+        {
+          "id": 518,
+          "title": "rock pop",
+          "alias": "rock-pop"
+        },
+        {
+          "id": 340,
+          "title": "symphonic rock",
+          "alias": "symphonic-rock"
+        },
+        {
+          "id": 2817,
+          "title": "Русский рок",
+          "alias": "russianrock"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Поп",
+      "alias": "pop",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 26,
+          "title": "pop punk",
+          "alias": "pop-punk"
+        },
+        {
+          "id": 35,
+          "title": "pop rock",
+          "alias": "pop-rock"
+        },
+        {
+          "id": 518,
+          "title": "rock pop",
+          "alias": "rock-pop"
+        },
+        {
+          "id": 210,
+          "title": "synthpop",
+          "alias": "synthpop"
+        },
+        {
+          "id": 6,
+          "title": "Поп",
+          "alias": "pop"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Панк",
+      "alias": "punk",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 26,
+          "title": "pop punk",
+          "alias": "pop-punk"
+        },
+        {
+          "id": 30,
+          "title": "punk",
+          "alias": "punk"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Русский рок",
+      "alias": "russianrock",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 2817,
+          "title": "Русский рок",
+          "alias": "russianrock"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Рэп",
+      "alias": "rap",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 41,
+          "title": "hip hop",
+          "alias": "hip-hop"
+        },
+        {
+          "id": 1038,
+          "title": "rap",
+          "alias": "rap"
+        },
+        {
+          "id": 17,
+          "title": "rapcore",
+          "alias": "rapcore"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Метал",
+      "alias": "metal",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 16,
+          "title": "metal",
+          "alias": "metal"
+        },
+        {
+          "id": 71,
+          "title": "industrial metal",
+          "alias": "industrial-metal"
+        },
+        {
+          "id": 205,
+          "title": "symphonic black metal",
+          "alias": "symphonic-black-metal"
+        },
+        {
+          "id": 140,
+          "title": "melodic black metal",
+          "alias": "melodic-black-metal"
+        },
+        {
+          "id": 39,
+          "title": "black metal",
+          "alias": "black-metal"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Джаз",
+      "alias": "jazz",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 69,
+          "title": "jazz",
+          "alias": "jazz"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Электроника",
+      "alias": "electronic",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 51,
+          "title": "dance",
+          "alias": "dance"
+        },
+        {
+          "id": 43,
+          "title": "ebm",
+          "alias": "ebm"
+        },
+        {
+          "id": 20,
+          "title": "electronic",
+          "alias": "electronic"
+        },
+        {
+          "id": 551,
+          "title": "electronic music",
+          "alias": "electronic-music"
+        },
+        {
+          "id": 63,
+          "title": "electronic rock",
+          "alias": "electronic-rock"
+        },
+        {
+          "id": 45,
+          "title": "techno",
+          "alias": "techno"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Классика",
+      "alias": "classic",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 97,
+          "title": "Классика",
+          "alias": "classic"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Комедия",
+      "alias": "comedy",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 933,
+          "title": "Юмор",
+          "alias": "humor"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Музыкальное шоу",
+      "alias": "musicshow",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 910,
+          "title": "Музыкальное шоу",
+          "alias": "musicshow"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Эстрада",
+      "alias": "estrada",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1036,
+          "title": "Эстрада",
+          "alias": "estrada"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "title": "Stand-up",
+      "alias": "stand-up",
+      "type": {
+        "id": 6,
+        "title": "Intention",
+        "alias": "intention"
+      },
+      "tags": [
+        {
+          "id": 1054,
+          "title": "Stand up",
+          "alias": "stand-up"
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "title": "Опера",
+      "alias": "opera",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 224,
+          "title": "Опера",
+          "alias": "opera"
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "title": "Романс",
+      "alias": "romans",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 132,
+          "title": "Романс",
+          "alias": "romance"
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "title": "Зарубежные композиторы",
+      "alias": "zarubezhnie-kompozitory",
+      "type": {
+        "id": 9,
+        "title": "Person",
+        "alias": "person"
+      },
+      "tags": [
+        {
+          "id": 1758,
+          "title": "Антонио Вивальди",
+          "alias": "antonio-vivaldi"
+        },
+        {
+          "id": 1798,
+          "title": "Астор Пьяццолла",
+          "alias": "astor-pyazzolla"
+        },
+        {
+          "id": 1763,
+          "title": "Вольфганг Амадей Моцарт",
+          "alias": "volvgang-mocart"
+        },
+        {
+          "id": 1792,
+          "title": "Иоганн Штраус",
+          "alias": "shtraus"
+        },
+        {
+          "id": 1755,
+          "title": "Людвиг ван Бетховен",
+          "alias": "ludvig-van-bethoven"
+        }
+      ]
+    },
+    {
+      "id": 317,
+      "title": "Русские композиторы",
+      "alias": "russkie-kompozitory",
+      "type": {
+        "id": 9,
+        "title": "Person",
+        "alias": "person"
+      },
+      "tags": [
+        {
+          "id": 1746,
+          "title": "Сергей Рахманинов",
+          "alias": "sergey-rahmaninov"
+        }
+      ]
+    },
+    {
+      "id": 319,
+      "title": "Смычковые инструменты",
+      "alias": "smychkovye-instrumenty",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1776,
+          "title": "Виолончель",
+          "alias": "violonchel"
+        },
+        {
+          "id": 1773,
+          "title": "Скрипка",
+          "alias": "skripka"
+        }
+      ]
+    },
+    {
+      "id": 320,
+      "title": "Клавишные инструменты",
+      "alias": "klavishnye-instrumenty",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1777,
+          "title": "Фортепиано",
+          "alias": "fortepiano"
+        }
+      ]
+    },
+    {
+      "id": 321,
+      "title": "Оркестр",
+      "alias": "orkestr",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1780,
+          "title": "Симфонический оркестр",
+          "alias": "simfonicheskiy-orkestr"
+        }
+      ]
+    },
+    {
+      "id": 324,
+      "title": "Барокко",
+      "alias": "barokko",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1758,
+          "title": "Антонио Вивальди",
+          "alias": "antonio-vivaldi"
+        }
+      ]
+    },
+    {
+      "id": 325,
+      "title": "Классицизм",
+      "alias": "klassitsizm",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1763,
+          "title": "Вольфганг Амадей Моцарт",
+          "alias": "volvgang-mocart"
+        },
+        {
+          "id": 1755,
+          "title": "Людвиг ван Бетховен",
+          "alias": "ludvig-van-bethoven"
+        }
+      ]
+    },
+    {
+      "id": 326,
+      "title": "Романтизм",
+      "alias": "romantizm",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1792,
+          "title": "Иоганн Штраус",
+          "alias": "shtraus"
+        }
+      ]
+    },
+    {
+      "id": 327,
+      "title": "Классическая музыка ХХ века",
+      "alias": "klassika-20-veka",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 1798,
+          "title": "Астор Пьяццолла",
+          "alias": "astor-pyazzolla"
+        },
+        {
+          "id": 1792,
+          "title": "Иоганн Штраус",
+          "alias": "shtraus"
+        },
+        {
+          "id": 1746,
+          "title": "Сергей Рахманинов",
+          "alias": "sergey-rahmaninov"
+        }
+      ]
+    },
+    {
+      "id": 334,
+      "title": "Акустика",
+      "alias": "acoustic",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 70,
+          "title": "acoustic",
+          "alias": "acoustic"
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "title": "Альтернативная музыка",
+      "alias": "alternative",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 27,
+          "title": "alternative",
+          "alias": "alternative"
+        },
+        {
+          "id": 151,
+          "title": "alternative rock",
+          "alias": "alternative-rock"
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "title": "Классическая музыка",
+      "alias": "classical",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 97,
+          "title": "Классика",
+          "alias": "classic"
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "title": "Кроссовер",
+      "alias": "crossover",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 176,
+          "title": "crossover",
+          "alias": "crossover"
+        }
+      ]
+    },
+    {
+      "id": 358,
+      "title": "Дэнс",
+      "alias": "dance",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 51,
+          "title": "dance",
+          "alias": "dance"
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "title": "Электро",
+      "alias": "electro",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 63,
+          "title": "electronic rock",
+          "alias": "electronic-rock"
+        },
+        {
+          "id": 551,
+          "title": "electronic music",
+          "alias": "electronic-music"
+        },
+        {
+          "id": 20,
+          "title": "electronic",
+          "alias": "electronic"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "title": "Фьюжн",
+      "alias": "fusion",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 673,
+          "title": "fusion",
+          "alias": "fusion"
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "title": "Гэридж",
+      "alias": "garage",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 540,
+          "title": "garage rock",
+          "alias": "garage-rock"
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "title": "Гранж",
+      "alias": "grunge",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 31,
+          "title": "grunge",
+          "alias": "grunge"
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "title": "Хардкор",
+      "alias": "hardcore",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 17,
+          "title": "rapcore",
+          "alias": "rapcore"
+        }
+      ]
+    },
+    {
+      "id": 383,
+      "title": "Инди",
+      "alias": "indie",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 11,
+          "title": "indie rock",
+          "alias": "indie-rock"
+        },
+        {
+          "id": 19,
+          "title": "indie",
+          "alias": "indie"
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "title": "Индустриальная музыка",
+      "alias": "industrial",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 42,
+          "title": "industrial",
+          "alias": "industrial"
+        },
+        {
+          "id": 71,
+          "title": "industrial metal",
+          "alias": "industrial-metal"
+        }
+      ]
+    },
+    {
+      "id": 391,
+      "title": "Новая волна",
+      "alias": "new-wave",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 80,
+          "title": "new wave",
+          "alias": "new-wave"
+        }
+      ]
+    },
+    {
+      "id": 398,
+      "title": "Поп-музыка",
+      "alias": "pop-music",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 26,
+          "title": "pop punk",
+          "alias": "pop-punk"
+        },
+        {
+          "id": 6,
+          "title": "Поп",
+          "alias": "pop"
+        },
+        {
+          "id": 35,
+          "title": "pop rock",
+          "alias": "pop-rock"
+        },
+        {
+          "id": 210,
+          "title": "synthpop",
+          "alias": "synthpop"
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "title": "Ретро",
+      "alias": "retro",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 460,
+          "title": "retro",
+          "alias": "retro"
+        }
+      ]
+    },
+    {
+      "id": 403,
+      "title": "Рок-н-ролл",
+      "alias": "rock-and-roll",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 22,
+          "title": "rock and roll",
+          "alias": "rock-and-roll"
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "title": "Симфоническая музыка",
+      "alias": "symphonic",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 205,
+          "title": "symphonic black metal",
+          "alias": "symphonic-black-metal"
+        },
+        {
+          "id": 340,
+          "title": "symphonic rock",
+          "alias": "symphonic-rock"
+        },
+        {
+          "id": 615,
+          "title": "symphonic",
+          "alias": "symphonic"
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "title": "Синтезатор",
+      "alias": "synth",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 210,
+          "title": "synthpop",
+          "alias": "synthpop"
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "title": "Техно",
+      "alias": "techno",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 45,
+          "title": "techno",
+          "alias": "techno"
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "title": "Андеграунд",
+      "alias": "underground",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 66,
+          "title": "underground",
+          "alias": "underground"
+        }
+      ]
+    },
+    {
+      "id": 422,
+      "title": "Вокал",
+      "alias": "vocal",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 632,
+          "title": "soprano",
+          "alias": "soprano"
+        }
+      ]
+    },
+    {
+      "id": 988,
+      "title": "Летние фестивали",
+      "alias": "letnie-festivali",
+      "type": {
+        "id": 6,
+        "title": "Intention",
+        "alias": "intention"
+      },
+      "tags": [
+        {
+          "id": 3979,
+          "title": "Летние фестивали",
+          "alias": "letnie-festivali"
+        }
+      ]
+    },
+    {
+      "id": 1098,
+      "title": "LIVEFEST",
+      "alias": "livefest",
+      "type": {
+        "id": 7,
+        "title": "Other",
+        "alias": "other"
+      },
+      "tags": [
+        {
+          "id": 4136,
+          "title": "LIVEFEST",
+          "alias": "livefest"
+        }
+      ]
+    },
+    {
+      "id": 1125,
+      "title": "Слушаем русский рэп",
+      "alias": "slushaem-russkij-rep",
+      "type": {
+        "id": 2,
+        "title": "Music genre",
+        "alias": "music"
+      },
+      "tags": [
+        {
+          "id": 4173,
+          "title": "Слушаем русский рэп",
+          "alias": "slushaem-russkij-rep"
+        }
+      ]
+    }
+  ],
+  "code": 1,
+  "ts": 1581163183580,
+  "version": "2.1"
+}
