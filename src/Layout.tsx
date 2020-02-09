@@ -13,7 +13,7 @@ import {
   HeaderSub,
   SocialBlock
 } from "./components/Header/Header";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, Link } from "react-router-dom";
 import styled from "styled-components";
 
 Backendless.initApp(
@@ -41,43 +41,29 @@ const Logo = styled.div`
   top: 100px;
   left: 50%;
   margin-left: -48px;
+`;
 
-`
-
-const TextSub = styled.span<{ active?: boolean }>`
+const TextSub = styled(Link)<{ active?: boolean }>`
   color: #d8d8d8;
   ${({ active }) => active && "color: #fff; pointer-events: none;"}
   ${({ active }) => !active && "cursor: pointer;"}
+  text-decoration: none;
 `;
 
 type IAMProps = {
-  onChange: () => void;
+  active: string;
 };
 
-class IAM extends Component<IAMProps> {
-  state = {
-    iAm: "local"
-  };
-
-  setIAM = iAm => {
-    this.setState({ iAm });
-  };
-
+export class IAM extends Component<IAMProps> {
   render() {
     return (
       <Text>
         I am&nbsp;&nbsp;
-        <TextSub
-          onClick={() => this.setIAM("local")}
-          active={this.state.iAm === "local"}
-        >
+        <TextSub to="/local" active={this.props.active === "local"}>
           Local
         </TextSub>
         &nbsp;&nbsp;
-        <TextSub
-          onClick={() => this.setIAM("foreigner")}
-          active={this.state.iAm === "foreigner"}
-        >
+        <TextSub to="/" active={this.props.active === "foreigner"}>
           Foreigner
         </TextSub>
       </Text>
@@ -123,7 +109,7 @@ class Layout extends Component<LayoutProps> {
                 <span className="text-danger">Hangout</span>.Moscow
               </strong>
             </a>
-            <IAM onChange={() => {}} />
+            <IAM active="foreigner" />
             <button
               className="navbar-toggler"
               type="button"
