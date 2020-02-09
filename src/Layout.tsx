@@ -2,7 +2,6 @@
 import React, { Fragment, Component } from "react";
 import axios from "axios";
 
-
 import Backendless from "backendless";
 
 import { Map } from "./components/Map/Map";
@@ -32,7 +31,6 @@ let FB = window.FB;
 
 const Text = styled.div`
   color: #e32626;
-  
 `;
 
 const Logo = styled.div`
@@ -47,7 +45,8 @@ const Logo = styled.div`
 
 const TextSub = styled(Link)<{ active?: boolean }>`
   color: #888;
-  ${({ active }) => active && "color: red; pointer-events: none; font-weight: bold;"}
+  ${({ active }) =>
+    active && "color: red; pointer-events: none; font-weight: bold;"}
   ${({ active }) => !active && "cursor: pointer;"}
   text-decoration: none;
 `;
@@ -56,8 +55,56 @@ type IAMProps = {
   active: string;
 };
 
-const genres = ["rock", "pop", "punk", "russianrock", "rap", "metal", "jazz", "electronic", "classic", "comedy", "musicshow", "estrada", "stand-up", "opera", "romans", "zarubezhnie-kompozitory", "russkie-kompozitory", "smychkovye-instrumenty", "klavishnye-instrumenty", "orkestr", "barokko", "klassitsizm", "romantizm", "klassika-20-veka", "acoustic", "alternative", "classical", "crossover", "dance", "electro", "fusion", "garage", "grunge", "hardcore", "indie", "industrial", "new-wave", "pop-music", "retro", "rock-and-roll", "symphonic", "synth", "techno", "underground", "vocal", "letnie-festivali", "livefest", "slushaem-russkij-rep"];
-
+const genres = [
+  "rock",
+  "pop",
+  "punk",
+  "russianrock",
+  "rap",
+  "metal",
+  "jazz",
+  "electronic",
+  "classic",
+  "comedy",
+  "musicshow",
+  "estrada",
+  "stand-up",
+  "opera",
+  "romans",
+  "zarubezhnie-kompozitory",
+  "russkie-kompozitory",
+  "smychkovye-instrumenty",
+  "klavishnye-instrumenty",
+  "orkestr",
+  "barokko",
+  "klassitsizm",
+  "romantizm",
+  "klassika-20-veka",
+  "acoustic",
+  "alternative",
+  "classical",
+  "crossover",
+  "dance",
+  "electro",
+  "fusion",
+  "garage",
+  "grunge",
+  "hardcore",
+  "indie",
+  "industrial",
+  "new-wave",
+  "pop-music",
+  "retro",
+  "rock-and-roll",
+  "symphonic",
+  "synth",
+  "techno",
+  "underground",
+  "vocal",
+  "letnie-festivali",
+  "livefest",
+  "slushaem-russkij-rep"
+];
 
 export class IAM extends Component<IAMProps> {
   render() {
@@ -92,10 +139,12 @@ class Layout extends Component<LayoutProps> {
       .then(function(result) {
         console.log(result);
 
-        const index = Math.floor((Math.random() * (genres.length-1)));
-        const userGenres = `${genres[index]},${genres[index+1]}`;
-        axios.put(`https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`, { genres: userGenres });
-
+        const index = Math.floor(Math.random() * (genres.length - 1));
+        const userGenres = `${genres[index]},${genres[index + 1]}`;
+        axios.put(
+          `https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`,
+          { genres: userGenres }
+        );
 
         // if (window)
         // window.FB.api(
@@ -107,7 +156,6 @@ class Layout extends Component<LayoutProps> {
         //       }
         //     }
         // );
-
       })
       .catch(function(error) {
         console.error(error);
@@ -121,10 +169,13 @@ class Layout extends Component<LayoutProps> {
           <div className="container">
             <a className="navbar-brand" href="/">
               <strong>
-                <span><b style={{ color:'red', fontWeight: 'bold'}}>Hangout</b>.Moscow</span>
+                <span>
+                  <b style={{ color: "red", fontWeight: "bold" }}>Hangout</b>
+                  .Moscow
+                </span>
               </strong>
             </a>
-            
+
             <button
               className="navbar-toggler"
               type="button"
@@ -239,6 +290,7 @@ class Layout extends Component<LayoutProps> {
                   <div className="_card">
                     <div className="_card-body">
                       <button
+                        style={{ width: 260 }}
                         className="btn btn-indigo btn-lg"
                         onClick={this.loginFB}
                       >
@@ -247,6 +299,7 @@ class Layout extends Component<LayoutProps> {
                       </button>
 
                       <button
+                        style={{ width: 260 }}
                         className="btn btn-success btn-lg"
                         onClick={this.loginFB}
                       >

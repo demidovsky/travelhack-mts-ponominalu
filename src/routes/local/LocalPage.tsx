@@ -7,28 +7,72 @@ export type LocalPageProps = RouteComponentProps<{}>;
 
 declare global {
   interface Window {
-    FB:any;
+    FB: any;
   }
 }
 let FB = window.FB;
 
-const ClientID = '25e40720af524919ab40dc55fdfbfaf5';
-const ClientSecret = 'd44f04d5b03b4ce8bcf6f2ce403baadf';
+const ClientID = "25e40720af524919ab40dc55fdfbfaf5";
+const ClientSecret = "d44f04d5b03b4ce8bcf6f2ce403baadf";
 
-const genres = ["rock", "pop", "punk", "russianrock", "rap", "metal", "jazz", "electronic", "classic", "comedy", "musicshow", "estrada", "stand-up", "opera", "romans", "zarubezhnie-kompozitory", "russkie-kompozitory", "smychkovye-instrumenty", "klavishnye-instrumenty", "orkestr", "barokko", "klassitsizm", "romantizm", "klassika-20-veka", "acoustic", "alternative", "classical", "crossover", "dance", "electro", "fusion", "garage", "grunge", "hardcore", "indie", "industrial", "new-wave", "pop-music", "retro", "rock-and-roll", "symphonic", "synth", "techno", "underground", "vocal", "letnie-festivali", "livefest", "slushaem-russkij-rep"];
-
+const genres = [
+  "rock",
+  "pop",
+  "punk",
+  "russianrock",
+  "rap",
+  "metal",
+  "jazz",
+  "electronic",
+  "classic",
+  "comedy",
+  "musicshow",
+  "estrada",
+  "stand-up",
+  "opera",
+  "romans",
+  "zarubezhnie-kompozitory",
+  "russkie-kompozitory",
+  "smychkovye-instrumenty",
+  "klavishnye-instrumenty",
+  "orkestr",
+  "barokko",
+  "klassitsizm",
+  "romantizm",
+  "klassika-20-veka",
+  "acoustic",
+  "alternative",
+  "classical",
+  "crossover",
+  "dance",
+  "electro",
+  "fusion",
+  "garage",
+  "grunge",
+  "hardcore",
+  "indie",
+  "industrial",
+  "new-wave",
+  "pop-music",
+  "retro",
+  "rock-and-roll",
+  "symphonic",
+  "synth",
+  "techno",
+  "underground",
+  "vocal",
+  "letnie-festivali",
+  "livefest",
+  "slushaem-russkij-rep"
+];
 
 export class LocalPage extends React.Component<LocalPageProps> {
-
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   loginFB = () => {
-
     const stayLoggedIn = true;
     Backendless.UserService.loginWithFacebookSdk(
-      { email: "email" },
+      { email: "email" }
       // stayLoggedIn,
       // { scope: 'user_likes' }
       /*options*/
@@ -36,10 +80,12 @@ export class LocalPage extends React.Component<LocalPageProps> {
       .then(function(result) {
         console.log(result);
 
-        const index = Math.floor((Math.random() * (genres.length-1)));
-        const userGenres = `${genres[index]},${genres[index+1]}`;
-        axios.put(`https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`, { genres: userGenres });
-
+        const index = Math.floor(Math.random() * (genres.length - 1));
+        const userGenres = `${genres[index]},${genres[index + 1]}`;
+        axios.put(
+          `https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`,
+          { genres: userGenres }
+        );
 
         // if (window)
         // window.FB.api(
@@ -61,9 +107,9 @@ export class LocalPage extends React.Component<LocalPageProps> {
     FB.getLoginStatus(function(response) {
       console.log(response);
     });
-  }
+  };
 
-/*  loginFB = () => {
+  /*  loginFB = () => {
     window.FB.getLoginStatus(function(response) {
       console.log(response);
       // statusChangeCallback(response);
@@ -75,14 +121,12 @@ export class LocalPage extends React.Component<LocalPageProps> {
       <Fragment>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
           <div className="container">
-            <a
-              className="navbar-brand"
-              href="/"
-              
-            >
-              <span><b style={{ color:'red', fontWeight: 'bold'}}>Hangout</b>.Moscow</span>
+            <a className="navbar-brand" href="/">
+              <span>
+                <b style={{ color: "red", fontWeight: "bold" }}>Hangout</b>
+                .Moscow
+              </span>
             </a>
-            
 
             <button
               className="navbar-toggler"
@@ -108,31 +152,21 @@ export class LocalPage extends React.Component<LocalPageProps> {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/#experiences"
-                  >
+                  <a className="nav-link" href="/#experiences">
                     Experiences
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/#locations"
-                  >
+                  <a className="nav-link" href="/#locations">
                     Locations
                   </a>
                 </li>
 
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/local"
-                  >
+                  <a className="nav-link" href="/local">
                     I am local!
                   </a>
                 </li>
-
               </ul>
               {/*<IAM active="local" />*/}
 
@@ -154,10 +188,7 @@ export class LocalPage extends React.Component<LocalPageProps> {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="#"
-                    className="nav-link border border-light rounded"
-                  >
+                  <a href="#" className="nav-link border border-light rounded">
                     Subscribe for events
                   </a>
                 </li>
@@ -179,19 +210,22 @@ export class LocalPage extends React.Component<LocalPageProps> {
               <div className="row wow fadeIn">
                 <div className="col-lg-7 mb-4 white-text text-center text-md-left">
                   <h1 className="display-4 font-weight-bold">
-                    <span style={{ color: "red" }}>Любишь концерты?</span> Изучаешь иностранный язык?
+                    <span style={{ color: "red" }}>Любишь концерты?</span>{" "}
+                    Изучаешь иностранный язык?
                   </h1>
 
                   <hr className="hr-light" />
 
                   <h2>
-                    <strong>Помоги преодолеть языковой барьер с&nbsp;помощью музыки!</strong>
+                    <strong>
+                      Помоги преодолеть языковой барьер с&nbsp;помощью музыки!
+                    </strong>
                   </h2>
 
                   <p className="mb-4 d-none d-md-block">
                     <h4>
-                      Ты можешь выступить в качестве проводника в мир российской музыки
-                      для иностранных туристов
+                      Ты можешь выступить в качестве проводника в мир российской
+                      музыки для иностранных туристов
                     </h4>
                   </p>
 
@@ -203,20 +237,21 @@ export class LocalPage extends React.Component<LocalPageProps> {
                 <div className="col-lg-5 col-xl-5 mb-4">
                   <div className="_card">
                     <div className="_card-body">
-
-{/*<div className="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="true"></div>*/}
+                      {/*<div className="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="true"></div>*/}
 
                       <button
                         className="btn btn-indigo btn-lg"
                         onClick={this.loginFB}
+                        style={{ width: 335 }}
                       >
-                        <i className="fab fa-facebook-f"></i>&nbsp; Войти с помощью
-                        Facebook
+                        <i className="fab fa-facebook-f"></i>&nbsp; Войти с
+                        помощью Facebook
                       </button>
 
                       <button
                         className="btn btn-success btn-lg"
                         onClick={this.loginFB}
+                        style={{ width: 335 }}
                       >
                         <i className="fab fa-spotify"></i>&nbsp; Войти с помощью
                         Spotify
@@ -263,6 +298,6 @@ export class LocalPage extends React.Component<LocalPageProps> {
           </div>
         </div>
       </Fragment>
-    )
+    );
   }
 }
