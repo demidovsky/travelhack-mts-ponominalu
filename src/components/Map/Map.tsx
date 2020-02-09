@@ -7,7 +7,7 @@ import { EventStore } from "../../stores/EventStore";
 import addMonths from "date-fns/addMonths";
 import addWeeks from "date-fns/addWeeks";
 import format from "date-fns/format";
-import translit from '../../utils/translit'
+import translit from "../../utils/translit";
 
 type MapProps = { width: string; height: string };
 
@@ -47,12 +47,35 @@ export class Map extends React.Component<MapProps> {
         event.venue.google_address.split(","),
         {
           iconCaption: translit(event.title)
-          // balloonContent
+          // hintContent: translit(event.title),
         }
+        // {
+        //   iconLayout: "default#image",
+        //   // Своё изображение иконки метки.
+        //   iconImageHref: "/preview.png",
+        //   // Размеры метки.
+        //   iconImageSize: [30, 42],
+        //   // Смещение левого верхнего угла иконки относительно
+        //   // её "ножки" (точки привязки).
+        //   iconImageOffset: [-5, -38]
+        // }
       );
-
       this.mapInstance.geoObjects.add(placeMark);
-      placeMark.events.add("click", () => alert("mark clicked"));
+      placeMark.events.add("click", () =>
+    
+        pnwidget.show({
+          init: {
+            referral_auth: "jpmvbqspphkmox9pigteawcoxfwl1iqa",
+            language: "en"
+          },
+          event: { alias: event.event.alias /*date: datetime[0], time:datetime[1]*/ },
+          tickets_show: true,
+          exclude_dates: true,
+          customStyle: true,
+          hideHeader: false,
+          closeButton: true
+        })
+      );
     });
   };
 

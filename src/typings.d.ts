@@ -8,3 +8,5 @@ declare module "ymaps"
 // }
 
 // export {}
+
+declare var pnwidget: any;
