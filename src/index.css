@@ -35,6 +35,7 @@ code {
 .badge-pill {
   font-size: 14px;
   font-weight: 400;
+  box-shadow: none !important;
 }
 
 .card-body-cascade {

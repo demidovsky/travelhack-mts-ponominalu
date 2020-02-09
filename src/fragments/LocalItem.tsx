@@ -20,7 +20,7 @@ export default class LocalItem extends Component<Props, State>  {
     const src = this.props.item.src || `https://graph.facebook.com/${this.props.item.id}/picture?type=large&width=380&height=380`
     return (
       <div className="card card-cascade d-flex flex-row mb-3" style={{minHeight:'150px'}}>
-        <div className="view view-cascade overlay" style={{ flex:1 }}>
+        <div className="_view view-cascade overlay" style={{ flex:1 }}>
           <img className="card-img-top " src={src} alt={this.props.item.name} style={{width:'150px',height:'150px'}}/>
           <a>
             <div className="mask rgba-white-slight"></div>

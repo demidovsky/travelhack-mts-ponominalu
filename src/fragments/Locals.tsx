@@ -15,6 +15,9 @@ interface MyState {
 }
 
 
+const genres = ["rock", "pop", "punk", "russianrock", "rap", "metal", "jazz", "electronic", "classic", "comedy", "musicshow", "estrada", "stand-up", "opera", "romans", "zarubezhnie-kompozitory", "russkie-kompozitory", "smychkovye-instrumenty", "klavishnye-instrumenty", "orkestr", "barokko", "klassitsizm", "romantizm", "klassika-20-veka", "acoustic", "alternative", "classical", "crossover", "dance", "electro", "fusion", "garage", "grunge", "hardcore", "indie", "industrial", "new-wave", "pop-music", "retro", "rock-and-roll", "symphonic", "synth", "techno", "underground", "vocal", "letnie-festivali", "livefest", "slushaem-russkij-rep"];
+
+
 export default class Locals extends Component<MyProps, MyState>  {
   constructor(props) {
     super(props);
@@ -33,7 +36,16 @@ export default class Locals extends Component<MyProps, MyState>  {
         { name: 'Maria Petrova', src: maria, genres: 'Alternative,Punk', speak: '🇺🇸 🇮🇹' },
         ].concat(result.data);
 
-        this.setState({ isLoaded: true, items: items });
+
+
+        this.setState({ isLoaded: true, items: items.map(item => {
+          if (item.genres) return item;
+          else {
+            const index = Math.floor((Math.random() * (genres.length-1)));
+            item.genres = `${genres[index]},${genres[index+1]}`;
+            return item;
+          }
+        }) });
 
         console.log(result);
       },
