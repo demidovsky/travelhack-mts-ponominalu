@@ -38,6 +38,7 @@ export class BottomCardBlock extends React.Component<MyProps, MyState> {
         console.error(error);
         this.setState({ isLoaded: false, error });
       });
+
   }
 
   render() {
@@ -54,6 +55,7 @@ export class BottomCardBlock extends React.Component<MyProps, MyState> {
             <BottomCard item={{
               large: true,
               src: rock,
+              seo: { alias: 'chayf' },
               title: 'Russian Hard Rock Experience',
               subevents: [{ min_price: 1200, date: (new Date()).toISOString().split('.')[0] }]
             }} />
@@ -62,6 +64,7 @@ export class BottomCardBlock extends React.Component<MyProps, MyState> {
             <BottomCard item={{
               large: true,
               src: rap,
+              seo: { alias: 'missio' },
               title: 'Russian Rap Battle Experience',
               subevents: [{ min_price: 1200, date: (new Date()).toISOString().split('.')[0] }]
             }} />
@@ -70,6 +73,7 @@ export class BottomCardBlock extends React.Component<MyProps, MyState> {
             <BottomCard item={{
               large: true,
               src: rave,
+              seo: { alias: 'missio' },
               title: 'Moscow Rave Underground Experience',
               subevents: [{ min_price: 1200, date: (new Date()).toISOString().split('.')[0] }]
             }} />
@@ -78,6 +82,7 @@ export class BottomCardBlock extends React.Component<MyProps, MyState> {
             <BottomCard item={{
               large: true,
               src: club,
+              seo: { alias: 'missio' },
               title: 'Moscow Night Club Experience',
               subevents: [{ min_price: 1200, date: (new Date()).toISOString().split('.')[0] }]
             }} />

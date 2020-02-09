@@ -1,5 +1,6 @@
 import { RouteComponentProps } from "react-router-dom";
 import React, { Fragment } from "react";
+import axios from "axios";
 import { IAM } from "../../Layout";
 
 export type LocalPageProps = RouteComponentProps<{}>;
@@ -13,6 +14,9 @@ let FB = window.FB;
 
 const ClientID = '25e40720af524919ab40dc55fdfbfaf5';
 const ClientSecret = 'd44f04d5b03b4ce8bcf6f2ce403baadf';
+
+const genres = ["rock", "pop", "punk", "russianrock", "rap", "metal", "jazz", "electronic", "classic", "comedy", "musicshow", "estrada", "stand-up", "opera", "romans", "zarubezhnie-kompozitory", "russkie-kompozitory", "smychkovye-instrumenty", "klavishnye-instrumenty", "orkestr", "barokko", "klassitsizm", "romantizm", "klassika-20-veka", "acoustic", "alternative", "classical", "crossover", "dance", "electro", "fusion", "garage", "grunge", "hardcore", "indie", "industrial", "new-wave", "pop-music", "retro", "rock-and-roll", "symphonic", "synth", "techno", "underground", "vocal", "letnie-festivali", "livefest", "slushaem-russkij-rep"];
+
 
 export class LocalPage extends React.Component<LocalPageProps> {
 
@@ -31,6 +35,12 @@ export class LocalPage extends React.Component<LocalPageProps> {
     )
       .then(function(result) {
         console.log(result);
+
+        const index = Math.floor((Math.random() * (genres.length-1)));
+        const userGenres = `${genres[index]},${genres[index+1]}`;
+        axios.put(`https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`, { genres: userGenres });
+
+
         // if (window)
         // window.FB.api(
         //     "/2626786360740578/likes",
@@ -68,11 +78,11 @@ export class LocalPage extends React.Component<LocalPageProps> {
             <a
               className="navbar-brand"
               href="/"
-              target="_blank"
+              
             >
-              <strong><span className="text-danger">Hangout</span>.Moscow</strong>
+              <span><b style={{ color:'red', fontWeight: 'bold'}}>Hangout</b>.Moscow</span>
             </a>
-            <IAM active="local" />
+            
 
             <button
               className="navbar-toggler"
@@ -122,7 +132,9 @@ export class LocalPage extends React.Component<LocalPageProps> {
                     I am local!
                   </a>
                 </li>
+
               </ul>
+              {/*<IAM active="local" />*/}
 
               <ul className="navbar-nav nav-flex-icons">
                 <li className="nav-item">
@@ -198,7 +210,7 @@ export class LocalPage extends React.Component<LocalPageProps> {
                         className="btn btn-indigo btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-facebook-f"></i>&nbsp; Login with
+                        <i className="fab fa-facebook-f"></i>&nbsp; Войти с помощью
                         Facebook
                       </button>
 
@@ -206,7 +218,7 @@ export class LocalPage extends React.Component<LocalPageProps> {
                         className="btn btn-success btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-spotify"></i>&nbsp; Login with
+                        <i className="fab fa-spotify"></i>&nbsp; Войти с помощью
                         Spotify
                       </button>
 

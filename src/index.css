@@ -36,6 +36,7 @@ code {
   font-size: 14px;
   font-weight: 400;
   box-shadow: none !important;
+  text-transform: capitalize;
 }
 
 .card-body-cascade {

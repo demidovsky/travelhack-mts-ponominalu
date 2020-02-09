@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React, { Fragment, Component } from "react";
+import axios from "axios";
+
 
 import Backendless from "backendless";
 
@@ -30,7 +32,7 @@ let FB = window.FB;
 
 const Text = styled.div`
   color: #e32626;
-  font-weight: bold;
+  
 `;
 
 const Logo = styled.div`
@@ -44,8 +46,8 @@ const Logo = styled.div`
 `;
 
 const TextSub = styled(Link)<{ active?: boolean }>`
-  color: #d8d8d8;
-  ${({ active }) => active && "color: #fff; pointer-events: none;"}
+  color: #888;
+  ${({ active }) => active && "color: red; pointer-events: none; font-weight: bold;"}
   ${({ active }) => !active && "cursor: pointer;"}
   text-decoration: none;
 `;
@@ -53,6 +55,9 @@ const TextSub = styled(Link)<{ active?: boolean }>`
 type IAMProps = {
   active: string;
 };
+
+const genres = ["rock", "pop", "punk", "russianrock", "rap", "metal", "jazz", "electronic", "classic", "comedy", "musicshow", "estrada", "stand-up", "opera", "romans", "zarubezhnie-kompozitory", "russkie-kompozitory", "smychkovye-instrumenty", "klavishnye-instrumenty", "orkestr", "barokko", "klassitsizm", "romantizm", "klassika-20-veka", "acoustic", "alternative", "classical", "crossover", "dance", "electro", "fusion", "garage", "grunge", "hardcore", "indie", "industrial", "new-wave", "pop-music", "retro", "rock-and-roll", "symphonic", "synth", "techno", "underground", "vocal", "letnie-festivali", "livefest", "slushaem-russkij-rep"];
+
 
 export class IAM extends Component<IAMProps> {
   render() {
@@ -62,7 +67,7 @@ export class IAM extends Component<IAMProps> {
         <TextSub to="/local" active={this.props.active === "local"}>
           Local
         </TextSub>
-        &nbsp;&nbsp;
+        &nbsp;/&nbsp;
         <TextSub to="/" active={this.props.active === "foreigner"}>
           Foreigner
         </TextSub>
@@ -87,6 +92,11 @@ class Layout extends Component<LayoutProps> {
       .then(function(result) {
         console.log(result);
 
+        const index = Math.floor((Math.random() * (genres.length-1)));
+        const userGenres = `${genres[index]},${genres[index+1]}`;
+        axios.put(`https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users/${result.objectId}`, { genres: userGenres });
+
+
         // if (window)
         // window.FB.api(
         //     "/2626786360740578/likes",
@@ -109,12 +119,12 @@ class Layout extends Component<LayoutProps> {
       <Fragment>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
           <div className="container">
-            <a className="navbar-brand" href="/" target="_blank">
+            <a className="navbar-brand" href="/">
               <strong>
-                <span className="text-danger">Hangout</span>.Moscow
+                <span><b style={{ color:'red', fontWeight: 'bold'}}>Hangout</b>.Moscow</span>
               </strong>
             </a>
-            <IAM active="foreigner" />
+            
             <button
               className="navbar-toggler"
               type="button"
@@ -154,6 +164,8 @@ class Layout extends Component<LayoutProps> {
                   </a>
                 </li>
               </ul>
+
+              {/*<IAM active="foreigner" />*/}
 
               <ul className="navbar-nav nav-flex-icons">
                 <li className="nav-item">

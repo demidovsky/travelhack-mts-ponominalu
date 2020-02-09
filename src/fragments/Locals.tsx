@@ -32,8 +32,8 @@ export default class Locals extends Component<MyProps, MyState>  {
     axios.get(`https://api.backendless.com/5491463D-49B2-248C-FF2E-E755E025FF00/9BD34E37-604C-44CD-80E2-F1F76DC6D66F/data/Users`)
       .then(result => {
         const items = [
-        { name: 'Nikita Ivanov', src: nikita, genres: 'Hip-Hop,Chillout', speak:'🇺🇸 🇩🇪' },
-        { name: 'Maria Petrova', src: maria, genres: 'Alternative,Punk', speak: '🇺🇸 🇮🇹' },
+        { name: 'Nikita Ivanov', src: nikita, genres: 'Hip-Hop,Chillout', speak:'🇬🇧 🇩🇪' },
+        { name: 'Maria Petrova', src: maria, genres: 'Alternative,Punk', speak: '🇬🇧 🇮🇹' },
         ].concat(result.data);
 
 
