@@ -270,15 +270,11 @@ class Layout extends Component<LayoutProps> {
 
                   <hr className="hr-light" />
 
-                  <h2>
-                    <strong>Overcome the language barrier through music</strong>
-                  </h2>
-
                   <p className="mb-4 ">
-                    <h4>
-                      Pick experiences, choose concerts near you, find locals to
-                      attend events together.
-                    </h4>
+                    <h2>
+                      Choose a musical event and find<br /> locals to hang out
+                      together
+                    </h2>
                   </p>
 
                   {/* <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" className="btn btn-indigo btn-lg">Start free tutorial

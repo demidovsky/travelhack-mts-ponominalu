@@ -210,24 +210,21 @@ export class LocalPage extends React.Component<LocalPageProps> {
               <div className="row wow fadeIn">
                 <div className="col-lg-7 mb-4 white-text text-center text-md-left">
                   <h1 className="display-4 font-weight-bold">
-                    <span style={{ color: "red" }}>Любишь концерты?</span>{" "}
-                    Изучаешь иностранный язык?
+                    <span style={{ color: "red" }}>
+                      Прокачай разговорный английский,
+                    </span>
+                    <br />
+                    общаясь с туристами
                   </h1>
 
                   <hr className="hr-light" />
 
                   <h2>
                     <strong>
-                      Помоги преодолеть языковой барьер с&nbsp;помощью музыки!
+                      Логинься, выбирай концерт и людей, с которыми хочешь туда
+                      пойти
                     </strong>
                   </h2>
-
-                  <p className="mb-4 d-none d-md-block">
-                    <h4>
-                      Ты можешь выступить в качестве проводника в мир российской
-                      музыки для иностранных туристов
-                    </h4>
-                  </p>
 
                   {/* <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" className="btn btn-indigo btn-lg">Start free tutorial
               <i className="fas fa-graduation-cap ml-2"></i>
