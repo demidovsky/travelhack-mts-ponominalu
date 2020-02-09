@@ -14,26 +14,86 @@ import {
   SocialBlock
 } from "./components/Header/Header";
 import { RouteComponentProps } from "react-router-dom";
+import styled from "styled-components";
 
 Backendless.initApp(
   "5491463D-49B2-248C-FF2E-E755E025FF00",
   "9BD34E37-604C-44CD-80E2-F1F76DC6D66F"
 );
 
-declare global { interface Window { FB:any; } }
+declare global {
+  interface Window {
+    FB: any;
+  }
+}
 let FB = window.FB;
+
+const Text = styled.div`
+  color: #e32626;
+  font-weight: bold;
+`;
+
+const Logo = styled.div`
+  background: url("/logo.png") no-repeat;
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -48px;
+
+`
+
+const TextSub = styled.span<{ active?: boolean }>`
+  color: #d8d8d8;
+  ${({ active }) => active && "color: #fff; pointer-events: none;"}
+  ${({ active }) => !active && "cursor: pointer;"}
+`;
+
+type IAMProps = {
+  onChange: () => void;
+};
+
+class IAM extends Component<IAMProps> {
+  state = {
+    iAm: "local"
+  };
+
+  setIAM = iAm => {
+    this.setState({ iAm });
+  };
+
+  render() {
+    return (
+      <Text>
+        I am&nbsp;&nbsp;
+        <TextSub
+          onClick={() => this.setIAM("local")}
+          active={this.state.iAm === "local"}
+        >
+          Local
+        </TextSub>
+        &nbsp;&nbsp;
+        <TextSub
+          onClick={() => this.setIAM("foreigner")}
+          active={this.state.iAm === "foreigner"}
+        >
+          Foreigner
+        </TextSub>
+      </Text>
+    );
+  }
+}
 
 type LayoutProps = RouteComponentProps<{}>;
 
 class Layout extends Component<LayoutProps> {
   // go to route <Link to="/path" /> or     this.props.history.[push|replace]("/path")
 
-
   loginFB = () => {
-
     const stayLoggedIn = true;
     Backendless.UserService.loginWithFacebookSdk(
-      { email: "email" },
+      { email: "email" }
       // stayLoggedIn,
       // { scope: 'user_likes' }
       /*options*/
@@ -41,15 +101,12 @@ class Layout extends Component<LayoutProps> {
       .then(function(result) {
         console.log(result);
         if (window)
-        window.FB.api(
-            "/2626786360740578/likes",
-            function (response) {
-              console.log(response);
-              if (response && !response.error) {
-                /* handle the result */
-              }
+          window.FB.api("/2626786360740578/likes", function(response) {
+            console.log(response);
+            if (response && !response.error) {
+              /* handle the result */
             }
-        );
+          });
       })
       .catch(function(error) {
         console.error(error);
@@ -61,14 +118,12 @@ class Layout extends Component<LayoutProps> {
       <Fragment>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
           <div className="container">
-            <a
-              className="navbar-brand"
-              href="/"
-              target="_blank"
-            >
-              <strong><span className="text-danger">Hangout</span>.Moscow</strong>
+            <a className="navbar-brand" href="/" target="_blank">
+              <strong>
+                <span className="text-danger">Hangout</span>.Moscow
+              </strong>
             </a>
-
+            <IAM onChange={() => {}} />
             <button
               className="navbar-toggler"
               type="button"
@@ -80,7 +135,6 @@ class Layout extends Component<LayoutProps> {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-
             <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
@@ -93,27 +147,18 @@ class Layout extends Component<LayoutProps> {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/#experiences"
-                  >
+                  <a className="nav-link" href="/#experiences">
                     Experiences
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/#locations"
-                  >
+                  <a className="nav-link" href="/#locations">
                     Locations
                   </a>
                 </li>
 
                 <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/local"
-                  >
+                  <a className="nav-link" href="/local">
                     I am local!
                   </a>
                 </li>
@@ -137,10 +182,7 @@ class Layout extends Component<LayoutProps> {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="#"
-                    className="nav-link border border-light rounded"
-                  >
+                  <a href="#" className="nav-link border border-light rounded">
                     Subscribe for events
                   </a>
                 </li>
@@ -158,11 +200,18 @@ class Layout extends Component<LayoutProps> {
           }}
         >
           <div className="mask rgba-black-light d-flex justify-content-center align-items-center">
+            <Logo />
             <div className="container">
               <div className="row wow fadeIn">
                 <div className="col-lg-7 mb-4 white-text text-center text-md-left">
                   <h1 className="display-4 font-weight-bold">
-                    <div className="d-md-inline" style={{ color: "red" }}>#hangout</div>likealocal
+                    <div
+                      className="d-md-inline"
+                      style={{ fontWeight: "bold", color: "red" }}
+                    >
+                      #hangout
+                    </div>
+                    likealocal
                   </h1>
 
                   <hr className="hr-light" />
@@ -190,17 +239,21 @@ class Layout extends Component<LayoutProps> {
                         className="btn btn-indigo btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-facebook-f"></i>&nbsp; Login with&nbsp;<b>Facebook</b>
+                        <i className="fab fa-facebook-f"></i>&nbsp; Login
+                        with&nbsp;<b>Facebook</b>
                       </button>
 
                       <button
                         className="btn btn-success btn-lg"
                         onClick={this.loginFB}
                       >
-                        <i className="fab fa-spotify"></i>&nbsp; Login with&nbsp;<b>Spotify</b>
+                        <i className="fab fa-spotify"></i>&nbsp; Login
+                        with&nbsp;<b>Spotify</b>
                       </button>
 
-                      <p className="text-white ml-4">(show your taste in music!)</p>
+                      <p className="text-white ml-4">
+                        *show your taste in music!
+                      </p>
 
                       {/*<form name="">
                   <h3 className="dark-grey-text text-center">
@@ -244,24 +297,20 @@ class Layout extends Component<LayoutProps> {
         </div>
 
         <main>
-
-          <Locals/>
-
-
+          <Locals />
 
           <div className="container" id="experiences">
             <h1>Book you experience</h1>
             <BottomCardBlock />
           </div>
 
-
           <div className="container" id="locations">
             <h1 className="pt-5 pb-2">Concerts near you today</h1>
           </div>
-          
+
           <Map width="100%" height="550px" />
 
-{/*
+          {/*
           <div className="container">
             <section className="mt-5 wow fadeIn">
               <div className="row">
