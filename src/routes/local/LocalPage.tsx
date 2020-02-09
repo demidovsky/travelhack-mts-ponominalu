@@ -1,5 +1,6 @@
 import { RouteComponentProps } from "react-router-dom";
 import React, { Fragment } from "react";
+import { IAM } from "../../Layout";
 
 export type LocalPageProps = RouteComponentProps<{}>;
 
@@ -71,6 +72,7 @@ export class LocalPage extends React.Component<LocalPageProps> {
             >
               <strong><span className="text-danger">Hangout</span>.Moscow</strong>
             </a>
+            <IAM active="local" />
 
             <button
               className="navbar-toggler"

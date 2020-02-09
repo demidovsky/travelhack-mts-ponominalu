@@ -26,9 +26,6 @@ interface MyState {
 }
 
 
-
-declare var pnwidget: any;
-
 export class BottomCard extends Component<MyProps, MyState> {
     onClick = () => {
         const alias = this.props.item.seo.alias;

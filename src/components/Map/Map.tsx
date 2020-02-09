@@ -5,9 +5,8 @@ import styled from "styled-components";
 import { xinject } from "../../utils/inject";
 import { EventStore } from "../../stores/EventStore";
 import addMonths from "date-fns/addMonths";
-import addWeeks from "date-fns/addWeeks";
 import format from "date-fns/format";
-import translit from '../../utils/translit'
+import translit from "../../utils/translit";
 
 type MapProps = { width: string; height: string };
 
@@ -32,7 +31,7 @@ export class Map extends React.Component<MapProps> {
 
       const events = await this.eventStore.load({
         start_date: format(new Date(), "yyyy-MM-dd"),
-        end_date: format(addWeeks(new Date(), 1), "yyyy-MM-dd")
+        end_date: format(addMonths(new Date(), 1), "yyyy-MM-dd")
       });
 
       this.drawEvents(events);
@@ -46,13 +45,38 @@ export class Map extends React.Component<MapProps> {
       const placeMark = new this.map.Placemark(
         event.venue.google_address.split(","),
         {
-          iconCaption: translit(event.title)
-          // balloonContent
+          // iconCaption: translit(event.title)
+          hintContent: translit(event.title)
+        },
+        {
+          iconLayout: "default#image",
+          // Своё изображение иконки метки.
+          iconImageHref: "/marker.png",
+          // Размеры метки.
+          iconImageSize: [36, 54],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          // iconImageOffset: [-5, -38]
+          cursor: "pointer"
         }
       );
-
       this.mapInstance.geoObjects.add(placeMark);
-      placeMark.events.add("click", () => alert("mark clicked"));
+      placeMark.events.add("click", () =>
+        pnwidget.show({
+          init: {
+            referral_auth: "jpmvbqspphkmox9pigteawcoxfwl1iqa",
+            language: "en"
+          },
+          event: {
+            alias: event.event.alias /*date: datetime[0], time:datetime[1]*/
+          },
+          tickets_show: true,
+          exclude_dates: true,
+          customStyle: true,
+          hideHeader: false,
+          closeButton: true
+        })
+      );
     });
   };
 
@@ -65,7 +89,7 @@ export class Map extends React.Component<MapProps> {
       center: [55.752219, 37.609846],
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
-      zoom: 15
+      zoom: 14
     });
     this.mapInstance.behaviors.disable("scrollZoom");
   };
